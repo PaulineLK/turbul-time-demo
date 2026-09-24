@@ -33,6 +33,7 @@ button,input{font:inherit}button{cursor:pointer}
 .mode button{border:1px solid rgba(70,80,90,.16);background:rgba(255,255,255,.74);border-radius:9px;padding:7px 9px;font-weight:700;color:#42505a}
 .search{position:relative;margin-bottom:10px}.search input{width:100%;border:1px solid #cfd4d6;border-radius:12px;padding:11px 12px 11px 37px;background:#fff;outline:none}
 .search:before{content:"⌕";position:absolute;left:13px;top:6px;font-size:22px;color:#7c878e}
+.scope-note{margin:-1px 2px 10px;color:var(--muted);font-size:12px;line-height:1.35}
 .children{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 3px 14px rgba(48,63,78,.03)}
 .row{width:100%;border:0;border-bottom:1px solid var(--line);background:#fff;color:var(--text);-webkit-text-fill-color:var(--text);padding:13px 14px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;text-align:left;min-height:66px}
 .row:last-child{border-bottom:0}
@@ -92,6 +93,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
     </div>
 
     <div class="search"><input id="search" placeholder="Rechercher un enfant"></div>
+    <div class="scope-note">Liste volontairement raccourcie pour la démonstration — l’effectif réel est supérieur à 60 enfants.</div>
     <div id="children" class="children"></div>
   </div>
 
@@ -140,7 +142,9 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
 const base=[
   ["Alice","Bernard","Double"],["Arthur","Durand","Pavillon"],["Camille","Moreau","Lune"],
   ["Gabriel","Leroy","Double"],["Jeanne","Martin","Double"],["Lina","Simon","Lune"],
-  ["Louis","Dupont","Pavillon"],["Mathis","Petit","Double"],["Nina","Laurent","Lune"],["Zoé","Lambert","Double"]
+  ["Louis","Dupont","Pavillon"],["Mathis","Petit","Double"],["Nina","Laurent","Lune"],
+  ["Noé","Michel","Pavillon"],["Rose","Garcia","Double"],["Sacha","Roux","Lune"],
+  ["Tom","Fournier","Pavillon"],["Hugo","Robert","Pavillon"],["Zoé","Lambert","Double"]
 ].map(([first,last,classe],i)=>({id:i+1,first,last,classe,arrival:null,departure:null,recentArrival:false,recentDeparture:false}));
 
 let state={mode:"arrival",children:structuredClone(base),arrivalIndex:0,departureIndex:0};
